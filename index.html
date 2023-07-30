@@ -1,49 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>My resume</title>
-       
-    </head>
-    <body>
-        <h2>Matas Matula</h2>
-        <h2 style='font-weight:normal'>Junior web developer</h2>
 
-        <h2>Carrer Objective</h2>
-        <p>As a high school student at Panevėžio 5th Gymnasium studying web development at Uncommon.lt, I am passionate about technology and have a strong drive to learn and grow as a software engineer. My foundation in coding languages such as HTML, CSS, and JavaScript, and familiarity with web development frameworks
-             such as React and Node.js, allows me to build dynamic and functional web applications. In addition, my experience in designing user interfaces and experiences using Figma enables me to create intuitive and visually appealing designs that enhance the user experience.</p>
-        <p>My current objective is to contribute my skills and knowledge to the software engineering field and continue to develop my expertise in both development and design. I am eager to collaborate with other professionals, learn from experienced mentors, and take on new challenges that allow me to expand my
-             skillset and make a positive impact.</p>
-        <hr>
-        <h2>Education</h2>
-        <h3 style='display:inline'>Uncommon.lt education: </h3><h3 style='display:inline; font-weight:normal'>a 6-month program that teaches both technical and soft skills, such as User Experience Design, Front End Web Development, and Project Management. Graduates can design, build and market a website and form teams to create solutions for small businesses or NGOs. </h3>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
+        #container {
+            overflow-y: scroll;
+            height: 100vh;
+            padding-top: 80px; /* Adjust this value to leave space for the top bar */
+        }
 
+        .TopBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            background-color: gold;
+            padding: 1px;
+            width: 100%;
+            align-items: center;
+        }
 
-        <hr>
+        .name {
+            font-size: 45px;
+        }
 
-        <h2>Work experience.</h2>
-        <li>Metal Fabricator's Asistant.</li>
-        <li>Livestock caretaker.</li>
-        <li>Livestock caretaker.</li>
-        <li>sports competition planner assistant.</li>
-        <li>Event operations staff.</li>
-        <hr>
+        #bee {
+            padding: 0px;
+            width: 100px;
+            margin-left: 20px;
+            border: 0px;
+            flex-shrink: 0;
+        }
 
-        <h2>Key skills</h2>
-        <li>Task driven</li>
-        <li>Easy adaptable</li>
-        <li>Teamwork skills</li>
-        <li>Continuous learning drive.</li>
-        <li>Profiient inUI/UX Design with Figma.</li>
-        <hr>
+        .TopTop {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-        <h2>Language</h2>
-        <li>Lithuanian Native</li>
-        <li>English Advanced</li>
-        <br/>
+        #navigation-button {
+            font-size: 25px;
+            text-decoration: none;
+            flex-shrink: 0;
+            margin-right: 20px; /* Add initial gap between buttons */
+            color: black; /* Set default button color */
+        }
 
-        <h4><a href="./public/contact.html">Contacts</a></h4>
-        <footer>© 2023 Matas Matula</footer>
-    </body>
+        #navigation-button.active {
+            color: rgb(241, 241, 241); /* Set color for active button */
+        }
+
+        @media (max-width: 768px) {
+            /* Adjust the max-width value to the desired breakpoint */
+            .TopTop {
+                flex-wrap: wrap;
+                gap: 10px; /* Reduce the gap between buttons on smaller screens */
+            }
+
+            #navigation-button {
+                margin-right: 10px; /* Reduce the margin on smaller screens */
+            }
+        }
+
+        #space {
+            color: gold;
+            font-size: 20px;
+            text-decoration: underline;
+            border-bottom: 1px solid gold;
+            text-decoration: none;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px;
+            gap: 20px;
+            min-width: 400px;
+        }
+
+        .susisiekite {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            gap: 20px;
+        }
+
+        .white {
+            color: white;
+        }
+
+        #comb {
+            max-height: 400px;
+        }
+
+        .jobs {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px;
+        }
+
+        .card {
+            max-width: 400px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .card-img-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: end;
+            padding: 20px;
+        }
+        .name{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="TopBar">
+            <img id="bee" src="./content/149483-honey-vector-bumblebee-bee-free-download-png-hq.png" />
+            <a class="name">Besign</a>
+            <div class="TopTop">
+                <a id="navigation-button" href="./index.html" class="active">Home</a>
+                <a id="navigation-button" href="./apie_mus.html">About us</a>
+                <a id="navigation-button" href="./kontaktai.html">Contacts</a>
+                <a class="space">45</a>
+            </div>
+        </div>
+
+        <div class="susisiekite">
+            <div>
+                <h1 class="white">Buzziest design ever</h1>
+                <h5 class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Posuere lorem ipsum dolor sit. Facilisis sed odio morbi
+                    quis commodo odio aenean.</h5>
+                <a id="space" id="navigation-button" href="./kontaktai.html">Get in touch</a>
+            </div>
+            <img id="comb" src="./content/Honeycomb.png" />
+        </div>
+
+        <div class="jobs">
+            <div class="card text-bg-dark">
+                <img class="worker" src="./content/1-worker-bee-csa-images.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            <div class="card text-bg-dark">
+                <img class="worker" src="./content/1-worker-bee-csa-images.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            <div class="card text-bg-dark">
+                <img class="worker" src="./content/1-worker-bee-csa-images.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <footer id="footer">COPYRIGHT 2023 | ALL RIGHTS RESERVED | MATAS MATULA</footer>
+        </div>
+    </div>
+</body>
+
 </html>
